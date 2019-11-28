@@ -9,6 +9,13 @@
 
 %define installable_zip 1
 
+# Entries migrated from the old rpm/droid-hal-hammerhead.spec
+%define enable_kernel_update 1
+
+%define additional_post_scripts \
+/usr/bin/groupadd-user media_rw || :\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
